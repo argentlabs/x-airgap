@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
+    <title>Argent AirGap</title>
+  </head>
+  <body>
+    <div class="argent-logo-container">
+      <img src="assets/images/logo.svg" alt="Argent Logo" class="argent-logo" />
+    </div>
+
+    <main class="card-container">
+      <div class="card">
+        <section class="card-body" id="cardBody">
+          <div class="camera-permission-box">
+            <div class="camera-permission-container">
+              <img
+                src="assets/images/icons/camera.svg"
+                alt="Camera Icon"
+                class="camera-icon"
+              />
+              <p class="p3-bold">
+                Allow camera access to scan the QR code on Argent X
+              </p>
+            </div>
+          </div>
+        </section>
+        <footer class="card-footer">
+          <button
+            class="card-button primary-button"
+            id="cameraPermissionbutton"
+          >
+            <span class="primary-button-text">Allow camera button</span>
+          </button>
+        </footer>
+      </div>
+    </main>
+
+    <div class="help-button-container">
+      <button class="help-button" id="helpButton">
+        <img
+          src="assets/images/icons/help.svg"
+          alt="Help Icon"
+          class="help-icon"
+        />
+        <span class="primary-button-text">Help</span>
+      </button>
+    </div>
+  </body>
+</html>
