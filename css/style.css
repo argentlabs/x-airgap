@@ -1,3 +1,31 @@
+@font-face {
+  font-family: "Barlow";
+  src: url("../assets/fonts/Barlow-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Barlow";
+  src: url("../assets/fonts/Barlow-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Barlow";
+  src: url("../assets/fonts/Barlow-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Barlow";
+  src: url("../assets/fonts/Barlow-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -82,11 +110,15 @@ main.card-container {
   border: none;
 }
 
-.camera-permission-box {
+.card-body {
   background-color: #0f0f0f;
   width: 404px;
   height: 300px;
   border-radius: 8px;
+}
+
+.camera-permission-box {
+  height: 100%;
 }
 
 .camera-permission-container {
@@ -104,6 +136,21 @@ main.card-container {
   font-weight: 500;
   line-height: 20px;
   color: #666666;
-  max-width: 232px;
+
   text-align: center;
+}
+
+.camera-permission-text {
+  max-width: 232px;
+}
+
+.scan-qr-text {
+  max-width: 372px;
+}
+
+#cameraView {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  border: 1px solid #404040;
 }
