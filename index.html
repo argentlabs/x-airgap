@@ -8,6 +8,14 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="js/vendor/jsQR.min.js"></script>
+    <script  src="js/vendor/base64.min.js"></script>
+    <script src="js/vendor/fflate.min.js"></script>
+    <script src="js/vendor/scure-starknet.min.js"></script>
+    <script src="js/vendor/lossless-json.min.js"></script>
+    <script src="js/json.js"></script>
+    <script src="js/shortString.js"></script>
+    <script src="js/hash.js" defer></script>
     <script src="js/script.js" defer></script>
     <title>Argent AirGap</title>
   </head>
@@ -16,31 +24,47 @@
       <img src="assets/images/logo.svg" alt="Argent Logo" class="argent-logo" />
     </div>
 
-    <main class="card-container">
-      <div class="card">
-        <section class="card-body" id="cardBody">
-          <div class="camera-permission-box">
-            <div class="camera-permission-container">
-              <img
-                src="assets/images/icons/camera.svg"
-                alt="Camera Icon"
-                class="camera-icon"
-              />
-              <p class="p3-bold">
-                Allow camera access to scan the QR code on Argent X
-              </p>
+    <main class="card-container" id="mainContainer">
+      <template id="cameraPermissionTemplate">
+        <div class="card" id="mainCard">
+          <section class="card-body" id="cardBody">
+            <div class="camera-permission-box">
+              <div class="camera-permission-container">
+                <img
+                  src="assets/images/icons/camera.svg"
+                  alt="Camera Icon"
+                  class="camera-icon"
+                />
+                <p class="p3-bold camera-permission-text">
+                  Allow camera access to scan the QR code on Argent X
+                </p>
+              </div>
             </div>
-          </div>
-        </section>
-        <footer class="card-footer">
-          <button
-            class="card-button primary-button"
-            id="cameraPermissionbutton"
-          >
-            <span class="primary-button-text">Allow camera button</span>
-          </button>
-        </footer>
-      </div>
+          </section>
+          <footer class="card-footer">
+            <button
+              class="card-button primary-button"
+              id="cameraPermissionbutton"
+            >
+              <span class="primary-button-text">Allow camera button</span>
+            </button>
+          </footer>
+        </div>
+      </template>
+
+      <template id="scanQRTemplate">
+        <div class="card" id="mainCard">
+          <section class="card-body" id="cardBody">
+            <div class="camera-view-box">
+              <video id="cameraView" autoplay playsinline/>
+              <canvas id="canvas" style="display:none;"></canvas>
+            </div>
+          </section>
+          <footer class="card-footer">
+           <p class="p3-bold scan-qr-text">From the transaction review screen, click
+                “Review on air-gapped device” to show the QR code </p>
+          </footer>
+        </div>
     </main>
 
     <div class="help-button-container">
