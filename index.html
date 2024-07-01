@@ -44,8 +44,8 @@
           </section>
           <footer class="card-footer">
             <button
-              class="card-button primary-button"
               id="cameraPermissionbutton"
+              class="card-button primary-button"
             >
               <span class="primary-button-text">Allow camera button</span>
             </button>
@@ -72,15 +72,27 @@
 
       <template id="airGappedData">
         <div class="ag-data-container">
+          <div class="restore-icon-container">
+            <button id="restoreButton" class="icon-button restore-icon-button">
+              <img
+                src="assets/images/icons/restore.svg"
+                alt="Restore Icon"
+                class="restore-icon"
+              />
+            </button>
+          </div>
+
           <div class="ag-data-card tx-hash-card">
             <div class="ag-data-header tx-hash-title-container">
               <h6 class="ag-data-title tx-hash-title">Transaction Hash</h6>
-              <button class="copy-icon-button copy-tx-hash-button">
+              <button
+                id="copyTxHash"
+                class="icon-button copy-icon-button copy-tx-hash-button"
+              >
                 <img
                   src="assets/images/icons/copy.svg"
                   alt="Copy Icon"
                   class="copy-icon"
-                  id="copyTxHash"
                 />
               </button>
             </div>
@@ -92,7 +104,10 @@
           <div class="ag-data-card raw-data-card">
             <div class="ag-data-header raw-data-title__container">
               <h6 class="ag-data-title raw-data-title">Raw message data</h6>
-              <button class="copy-icon-button copy-raw-data-button">
+              <button
+                id="copyTxHash"
+                class="icon-button copy-icon-button copy-raw-data-button"
+              >
                 <img
                   src="assets/images/icons/copy.svg"
                   alt="Copy Icon"
