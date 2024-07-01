@@ -13,9 +13,10 @@
     <script src="js/vendor/fflate.min.js"></script>
     <script src="js/vendor/scure-starknet.min.js"></script>
     <script src="js/vendor/lossless-json.min.js"></script>
+    <script src="js/vendor/json-formatter.min.js"></script>
     <script src="js/json.js"></script>
     <script src="js/shortString.js"></script>
-    <script src="js/hash.js" defer></script>
+    <script src="js/hash.js"></script>
     <script src="js/script.js" defer></script>
     <title>Argent AirGap</title>
   </head>
@@ -66,6 +67,44 @@
               device” to show the QR code
             </p>
           </footer>
+        </div>
+      </template>
+
+      <template id="airGappedData">
+        <div class="ag-data-container">
+          <div class="ag-data-card tx-hash-card">
+            <div class="ag-data-header tx-hash-title-container">
+              <h6 class="ag-data-title tx-hash-title">Transaction Hash</h6>
+              <button class="copy-icon-button copy-tx-hash-button">
+                <img
+                  src="assets/images/icons/copy.svg"
+                  alt="Copy Icon"
+                  class="copy-icon"
+                  id="copyTxHash"
+                />
+              </button>
+            </div>
+            <div class="ag-data-card-body tx-hash-card-body">
+              <p class="p4-default" id="tx-hash-content"></p>
+            </div>
+          </div>
+
+          <div class="ag-data-card raw-data-card">
+            <div class="ag-data-header raw-data-title__container">
+              <h6 class="ag-data-title raw-data-title">Raw message data</h6>
+              <button class="copy-icon-button copy-raw-data-button">
+                <img
+                  src="assets/images/icons/copy.svg"
+                  alt="Copy Icon"
+                  class="copy-icon"
+                  id="copyRawData"
+                />
+              </button>
+            </div>
+            <div class="ag-data-card-body raw-data-card-body">
+              <p class="p4-default" id="raw-data-content"></p>
+            </div>
+          </div>
         </div>
       </template>
     </main>

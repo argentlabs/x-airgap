@@ -154,3 +154,69 @@ main.card-container {
   border-radius: 8px;
   border: 1px solid #404040;
 }
+
+.ag-data-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.ag-data-card {
+  width: 500px;
+  max-height: 320px;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding: 16px 20px;
+  border-radius: 16px;
+  background-color: #262626;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.5);
+}
+
+.ag-data-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.ag-data-title {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  color: #fff;
+}
+
+.ag-data-card-body {
+  overflow: scroll;
+  background-color: #0f0f0f;
+  border-radius: 8px;
+  border: 1px solid #404040;
+}
+
+.p4-default {
+  padding: 16px;
+  color: white;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  word-wrap: break-word;
+  text-wrap: wrap;
+}
+
+pre.tx-data {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-wrap: wrap;
+  line-height: 150%;
+}
+
+.copy-icon-button {
+  background-color: transparent;
+}
