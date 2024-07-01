@@ -1,20 +1,35 @@
 const mainContainer = document.getElementById("mainContainer");
 
-window.onload = async () => {
-  const cameraPermissionButton = document.getElementById(
-    "cameraPermissionbutton"
-  );
+const templates = {};
+let cameraPermission = null;
 
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("template").forEach(template => {
+    templates[template.id] = template;
+  });
+});
+
+window.onload = onLoad;
+
+async function onLoad() {
   try {
-    const permission = await navigator.permissions.query({ name: "camera" });
+    cameraPermission =
+      cameraPermission ??
+      (await navigator.permissions.query({ name: "camera" }));
 
-    if (permission.state === "granted") {
-      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+    if (cameraPermission.state === "granted") {
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video: true
+      });
       onCameraPermissionGranted(stream);
     } else {
-      const template = document.getElementById("cameraPermissionTemplate");
+      const template = templates["cameraPermissionTemplate"];
       const clone = document.importNode(template.content, true);
       mainContainer.appendChild(clone);
+
+      const cameraPermissionButton = document.getElementById(
+        "cameraPermissionbutton"
+      );
 
       cameraPermissionButton.addEventListener("click", async () => {
         try {
@@ -36,10 +51,10 @@ window.onload = async () => {
     console.log("🚀 ~ window.onload= ~ error:", error);
     alert("Error getting camera permission status");
   }
-};
+}
 
 function onCameraPermissionGranted(stream) {
-  const template = document.getElementById("scanQRTemplate");
+  const template = templates["scanQRTemplate"];
   const clone = document.importNode(template.content, true);
   mainContainer.appendChild(clone);
 
@@ -91,7 +106,7 @@ function processData(data) {
 function showTxInfo(txData) {
   const { tx, txHash } = txData;
   const prettifiedTx = jsonFormatter.format(tx, "\t");
-  const template = document.getElementById("airGappedData");
+  const template = templates["airGappedData"];
   const clone = document.importNode(template.content, true);
 
   // Tx Hash
@@ -115,6 +130,9 @@ function showTxInfo(txData) {
   copyRawDataButton.addEventListener("click", () => {
     copyToClipboard(tx);
   });
+
+  const restoreButton = document.getElementById("restoreButton");
+  restoreButton.addEventListener("click", onRestore);
 }
 
 async function copyToClipboard(text) {
@@ -123,4 +141,9 @@ async function copyToClipboard(text) {
   } catch (error) {
     console.error("Copy failed", error);
   }
+}
+
+function onRestore() {
+  mainContainer.innerHTML = "";
+  return onLoad();
 }
