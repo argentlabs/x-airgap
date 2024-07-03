@@ -56,6 +56,7 @@ async function onLoad() {
 function onCameraPermissionGranted(stream) {
   const template = templates["scanQRTemplate"];
   const clone = document.importNode(template.content, true);
+  mainContainer.innerHTML = "";
   mainContainer.appendChild(clone);
 
   const video = document.getElementById("cameraView");
