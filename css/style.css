@@ -52,24 +52,6 @@ button {
   left: 40px;
 }
 
-.help-button-container {
-  position: absolute;
-  bottom: 40px;
-  left: 40px;
-}
-
-#helpButton {
-  display: inline-flex;
-  padding: 8px 10px 8px 8px;
-  justify-content: center;
-  align-items: center;
-  gap: 4px;
-  border-radius: 100px;
-  border: 1px solid #1f1f1f;
-  background-color: transparent;
-  cursor: pointer;
-}
-
 .primary-button-text {
   color: #fff;
   font-size: 14px;
