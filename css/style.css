@@ -155,7 +155,7 @@ main.card-container {
 }
 
 .ag-data-card {
-  width: 500px;
+  width: 520px;
   max-height: 320px;
   overflow: scroll;
   display: flex;

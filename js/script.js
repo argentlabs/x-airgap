@@ -107,11 +107,13 @@ function processData(data) {
 function showTxInfo(txData) {
   const { tx, txHash } = txData;
   const prettifiedTx = jsonFormatter.format(tx, "\t");
+  const prettifiedTxHash = addHexPrefix(removeHexPrefix(txHash).toUpperCase());
+
   const template = templates["airGappedData"];
   const clone = document.importNode(template.content, true);
 
   // Tx Hash
-  clone.querySelector("#tx-hash-content").textContent = txHash;
+  clone.querySelector("#tx-hash-content").textContent = prettifiedTxHash;
 
   // Raw Data
   const pre = document.createElement("pre");
