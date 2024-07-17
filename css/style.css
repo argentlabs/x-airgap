@@ -1,0 +1,215 @@
+@font-face {
+  font-family: "Barlow";
+  src: url("../assets/fonts/Barlow-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Barlow";
+  src: url("../assets/fonts/Barlow-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Barlow";
+  src: url("../assets/fonts/Barlow-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Barlow";
+  src: url("../assets/fonts/Barlow-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Barlow", sans-serif;
+  background-color: #0f0f0f;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+button {
+  font-family: "Barlow", sans-serif;
+  cursor: pointer;
+  border: none;
+}
+
+.argent-logo-container {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.primary-button-text {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 100%;
+}
+
+main.card-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 436px;
+  height: 436px;
+  background-color: #1f1f1f;
+  border-radius: 16px;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 16px;
+}
+
+.primary-button {
+  display: inline-flex;
+  padding: 13px 20px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  background: #f36a3d;
+  color: #fff;
+  border: none;
+}
+
+.card-body {
+  background-color: #0f0f0f;
+  width: 404px;
+  height: 300px;
+  border-radius: 8px;
+}
+
+.camera-permission-box {
+  height: 100%;
+}
+
+.camera-permission-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.p3-bold {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  color: #666666;
+
+  text-align: center;
+}
+
+.camera-permission-text {
+  max-width: 232px;
+}
+
+.scan-qr-text {
+  max-width: 372px;
+}
+
+#cameraView {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  border: 1px solid #404040;
+}
+
+.ag-data-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.restore-icon-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 24px;
+}
+
+.ag-data-card {
+  width: 520px;
+  max-height: 320px;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 16px;
+  border-radius: 16px;
+  background-color: #262626;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.5);
+  overflow: auto;
+}
+
+.ag-data-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.ag-data-title {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  color: #fff;
+}
+
+.ag-data-card-body {
+  overflow: scroll;
+  background-color: #0f0f0f;
+  border-radius: 8px;
+  border: 1px solid #404040;
+  overflow: auto;
+}
+
+.p4-default {
+  padding: 16px;
+  color: white;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  word-wrap: break-word;
+  text-wrap: wrap;
+}
+
+pre.tx-data {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-wrap: wrap;
+  line-height: 150%;
+}
+
+.icon-button {
+  background-color: transparent;
+}
