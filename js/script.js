@@ -27,6 +27,8 @@ async function onLoad() {
       const clone = document.importNode(template.content, true);
       mainContainer.appendChild(clone);
 
+      attachPasteTransactionHandler();
+
       const cameraPermissionButton = document.getElementById(
         "cameraPermissionbutton"
       );
@@ -48,7 +50,6 @@ async function onLoad() {
       });
     }
   } catch (error) {
-    console.log("🚀 ~ window.onload= ~ error:", error);
     alert("Error getting camera permission status");
   }
 }
@@ -58,6 +59,8 @@ function onCameraPermissionGranted(stream) {
   const clone = document.importNode(template.content, true);
   mainContainer.innerHTML = "";
   mainContainer.appendChild(clone);
+
+  attachPasteTransactionHandler();
 
   const video = document.getElementById("cameraView");
   const canvasElement = document.getElementById("canvas");
@@ -149,4 +152,19 @@ async function copyToClipboard(text) {
 function onRestore() {
   mainContainer.innerHTML = "";
   return onLoad();
+}
+
+function attachPasteTransactionHandler() {
+  const pasteTransactionButton = document.getElementById("pasteTxButton");
+  pasteTransactionButton.addEventListener("click", async () => {
+    try {
+      const text = await navigator.clipboard.readText();
+      if (text) {
+        const txData = processData(text);
+        showTxInfo(txData);
+      }
+    } catch (error) {
+      alert("Invalid transaction copied");
+    }
+  });
 }
