@@ -25,48 +25,64 @@
       <img src="assets/images/logo.svg" alt="Argent Logo" class="argent-logo" />
     </div>
 
-    <main class="card-container" id="mainContainer">
+    <main id="mainContainer">
       <template id="cameraPermissionTemplate">
-        <div class="card" id="mainCard">
-          <section class="card-body" id="cardBody">
-            <div class="camera-permission-box">
-              <div class="camera-permission-container">
-                <img
-                  src="assets/images/icons/camera.svg"
-                  alt="Camera Icon"
-                  class="camera-icon"
-                />
-                <p class="p3-bold camera-permission-text">
-                  Allow camera access to scan the QR code on Argent X
-                </p>
+        <div class="card-container">
+          <div class="card" id="mainCard">
+            <section class="card-body" id="cardBody">
+              <div class="camera-permission-box">
+                <div class="camera-permission-container">
+                  <img
+                    src="assets/images/icons/camera.svg"
+                    alt="Camera Icon"
+                    class="camera-icon"
+                  />
+                  <p class="p3-bold camera-permission-text">
+                    Allow camera access to scan the QR code on Argent X
+                  </p>
+                </div>
               </div>
-            </div>
-          </section>
-          <footer class="card-footer">
-            <button
-              id="cameraPermissionbutton"
-              class="card-button primary-button"
-            >
-              <span class="primary-button-text">Allow camera</span>
+            </section>
+            <footer class="card-footer">
+              <button
+                id="cameraPermissionbutton"
+                class="card-button primary-button"
+              >
+                <span class="primary-button-text">Allow camera</span>
+              </button>
+            </footer>
+          </div>
+
+          <div class="paste-tx-container">
+            <button class="paste-tx-button" id="pasteTxButton">
+              or click here to paste the transaction
             </button>
-          </footer>
+          </div>
         </div>
       </template>
 
       <template id="scanQRTemplate">
-        <div class="card" id="mainCard">
-          <section class="card-body" id="cardBody">
-            <div class="camera-view-box">
-              <video id="cameraView" autoplay playsinline />
-              <canvas id="canvas" style="display: none"></canvas>
-            </div>
-          </section>
-          <footer class="card-footer">
-            <p class="p3-bold scan-qr-text">
-              From the transaction review screen, click “Review on air-gapped
-              device” to show the QR code
-            </p>
-          </footer>
+        <div class="card-container">
+          <div class="card" id="mainCard">
+            <section class="card-body" id="cardBody">
+              <div class="camera-view-box">
+                <video id="cameraView" autoplay playsinline />
+                <canvas id="canvas" style="display: none"></canvas>
+              </div>
+            </section>
+            <footer class="card-footer">
+              <p class="p3-bold scan-qr-text">
+                From the transaction review screen, click “Review on air-gapped
+                device” to show the QR code
+              </p>
+            </footer>
+          </div>
+
+          <div class="paste-tx-container">
+            <button class="paste-tx-button" id="pasteTxButton">
+              or click here to paste the transaction
+            </button>
+          </div>
         </div>
       </template>
 

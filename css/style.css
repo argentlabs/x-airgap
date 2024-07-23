@@ -59,7 +59,7 @@ button {
   line-height: 100%;
 }
 
-main.card-container {
+#mainContainer {
   width: 100%;
   height: 100%;
   display: flex;
@@ -212,4 +212,21 @@ pre.tx-data {
 
 .icon-button {
   background-color: transparent;
+}
+
+.paste-tx-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 32px;
+}
+
+.paste-tx-button {
+  background: transparent;
+  color: #666666;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 100%;
 }
