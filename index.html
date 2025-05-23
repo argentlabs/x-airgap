@@ -8,16 +8,48 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <script src="js/vendor/jsQR.min.js"></script>
-    <script src="js/vendor/base64.min.js"></script>
-    <script src="js/vendor/fflate.min.js"></script>
-    <script src="js/vendor/scure-starknet.min.js"></script>
-    <script src="js/vendor/lossless-json.min.js"></script>
-    <script src="js/vendor/json-formatter.min.js"></script>
-    <script src="js/json.js"></script>
-    <script src="js/shortString.js"></script>
-    <script src="js/hash.js"></script>
-    <script src="js/script.js" defer></script>
+    <script>
+      function handleScriptError(scriptSrc) {
+        console.error(`Failed to load script: ${scriptSrc}`);
+        // Optionally show an error message to the user
+        alert(`Failed to load required script. Please refresh the page.`);
+      }
+    </script>
+    <script
+      src="js/vendor/scure-starknet.min.js"
+      onerror="handleScriptError('scure-starknet.min.js')"
+    ></script>
+    <script
+      src="js/vendor/jsQR.min.js"
+      onerror="handleScriptError('jsQR.min.js')"
+    ></script>
+    <script
+      src="js/vendor/base64.min.js"
+      onerror="handleScriptError('base64.min.js')"
+    ></script>
+    <script
+      src="js/vendor/fflate.min.js"
+      onerror="handleScriptError('fflate.min.js')"
+    ></script>
+    <script
+      src="js/vendor/lossless-json.min.js"
+      onerror="handleScriptError('lossless-json.min.js')"
+    ></script>
+    <script
+      src="js/vendor/json-formatter.min.js"
+      onerror="handleScriptError('json-formatter.min.js')"
+    ></script>
+    <script src="js/json.js" onerror="handleScriptError('json.js')"></script>
+    <script
+      src="js/shortString.js"
+      onerror="handleScriptError('shortString.js')"
+    ></script>
+    <script src="js/hash.js" onerror="handleScriptError('hash.js')"></script>
+    <script
+      src="js/script.js"
+      onerror="handleScriptError('script.js')"
+      defer
+    ></script>
     <title>Argent AirGap</title>
   </head>
   <body>
@@ -72,8 +104,8 @@
             </section>
             <footer class="card-footer">
               <p class="p3-bold scan-qr-text">
-                From the transaction review screen, click “Review on air-gapped
-                device” to show the QR code
+                From the transaction review screen, click "Review on air-gapped
+                device" to show the QR code
               </p>
             </footer>
           </div>
