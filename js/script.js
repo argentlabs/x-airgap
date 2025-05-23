@@ -14,8 +14,7 @@ window.onload = onLoad;
 async function onLoad() {
   try {
     cameraPermission =
-      cameraPermission ??
-      (await navigator.permissions.query({ name: "camera" }));
+      cameraPermission ?? (await navigator.permissions.query({name: "camera"}));
 
     if (cameraPermission.state === "granted") {
       const stream = await navigator.mediaDevices.getUserMedia({
@@ -104,11 +103,11 @@ function processData(data) {
   // parse the tx and calculate the hash
   const parsedTx = json.parse(tx);
   const txHash = calculateInvokeTransactionHash(parsedTx);
-  return { tx, txHash };
+  return {tx, txHash};
 }
 
 function showTxInfo(txData) {
-  const { tx, txHash } = txData;
+  const {tx, txHash} = txData;
   const prettifiedTx = jsonFormatter.format(tx, "\t");
   const prettifiedTxHash = addHexPrefix(removeHexPrefix(txHash).toUpperCase());
 
@@ -164,6 +163,7 @@ function attachPasteTransactionHandler() {
         showTxInfo(txData);
       }
     } catch (error) {
+      console.error("Paste failed", error);
       alert("Invalid transaction copied");
     }
   });

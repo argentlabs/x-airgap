@@ -29,6 +29,10 @@ function computeHashOnElements(data) {
     .toString();
 }
 
+function toHex(value) {
+  return addHexPrefix(BigInt(value).toString(16));
+}
+
 /**
  * Calculate transaction pedersen hash for common properties
  *
