@@ -10,6 +10,7 @@ const MAX_PRICE_PER_UNIT_BITS = 128n;
 const RESOURCE_VALUE_OFFSET = MAX_AMOUNT_BITS + MAX_PRICE_PER_UNIT_BITS;
 const L1_GAS_NAME = BigInt(encodeShortString("L1_GAS"));
 const L2_GAS_NAME = BigInt(encodeShortString("L2_GAS"));
+const L1_DATA_GAS_NAME = BigInt(encodeShortString("L1_DATA"));
 
 const TransactionHashPrefix = Object.freeze({
   DECLARE: "0x6465636c617265", // encodeShortString('declare'),
@@ -104,7 +105,12 @@ function hashFeeField(tip, bounds) {
     (BigInt(bounds.l2_gas.max_amount) << MAX_PRICE_PER_UNIT_BITS) +
     BigInt(bounds.l2_gas.max_price_per_unit);
 
-  return poseidonHashMany([BigInt(tip), L1Bound, L2Bound]);
+  const L1Data =
+    (L1_DATA_GAS_NAME << RESOURCE_VALUE_OFFSET) +
+    (BigInt(bounds.l1_data_gas.max_amount) << MAX_PRICE_PER_UNIT_BITS) +
+    BigInt(bounds.l1_data_gas.max_price_per_unit);
+
+  return poseidonHashMany([BigInt(tip), L1Bound, L2Bound, L1Data]);
 }
 
 function calculateTransactionHashCommonV3(
